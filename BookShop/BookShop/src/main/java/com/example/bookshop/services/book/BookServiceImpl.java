@@ -27,4 +27,9 @@ public class BookServiceImpl implements BookService {
     public List<Book> findAllByReleaseDateAfter(LocalDate localDate) {
         return this.bookRepository.findAllByReleaseDateAfter(localDate).orElseThrow(NoSuchElementException::new);
     }
+
+    @Override
+    public List<Book> findAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc(String firstName, String lastName) {
+        return this.bookRepository.findAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc(firstName,lastName).orElseThrow(NoSuchElementException::new);
+    }
 }

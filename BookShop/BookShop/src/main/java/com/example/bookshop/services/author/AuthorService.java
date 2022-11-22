@@ -13,5 +13,8 @@ public interface AuthorService {
 
     Author getRandomAuthor();
 
-   List<Author> findDistinctByBooksBefore(LocalDate date);
+    List<Author> findDistinctByBooksBefore(LocalDate date);
+
+//    List<Author> findAuthorGroupByBooksOrderByBooks();
+
 }

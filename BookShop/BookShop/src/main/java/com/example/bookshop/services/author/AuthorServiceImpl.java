@@ -46,4 +46,11 @@ public class AuthorServiceImpl implements AuthorService {
     public List<Author> findDistinctByBooksBefore(LocalDate date) {
         return this.authorRepository.findDistinctByBooksReleaseDateBefore(date).orElseThrow(NoSuchElementException::new);
     }
+
+//    @Override
+//    public List<Author> findAuthorGroupByBooksOrderByBooks() {
+//        return this.authorRepository.findAuthorGroupByBooksOrderByBooks();
+//    }
+
+
 }

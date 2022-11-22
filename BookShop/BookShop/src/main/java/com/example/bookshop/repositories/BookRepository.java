@@ -12,4 +12,6 @@ import java.util.Optional;
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     Optional<List<Book>> findAllByReleaseDateAfter(LocalDate localDate);
+
+    Optional<List<Book>> findAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc(String firstName,String lastName);
 }

@@ -10,4 +10,6 @@ public interface BookService {
 
     void seedBooks(List<Book> bookList);
    List<Book> findAllByReleaseDateAfter(LocalDate localDate);
+
+   List<Book> findAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc(String firstName,String lastName);
 }

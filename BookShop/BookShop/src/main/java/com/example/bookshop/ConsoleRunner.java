@@ -11,9 +11,8 @@ import java.time.LocalDate;
 
 @Component
 public class ConsoleRunner implements CommandLineRunner {
-    private LocalDate BOOK_YEAR = LocalDate.of(2000,1,1);
-    private LocalDate BOOK_YEAR_BEFORE = LocalDate.of(1990,1,1);
-
+    private LocalDate BOOK_YEAR = LocalDate.of(2000, 1, 1);
+    private LocalDate BOOK_YEAR_BEFORE = LocalDate.of(1990, 1, 1);
 
 
     private final SeedService seedService;
@@ -29,13 +28,13 @@ public class ConsoleRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//    this.seedService.seedAuthors();
-//    this.seedService.seedCategory();
-//    this.seedService.seedBooks();
-        this.seedService.seedAllData();
+//    this.seedService.seedAllData();
+
+
 //    this.getAllBooksAfterAGivenYear();
 //    this.getAllAuthorsWithBooksReleaseDateBefore();
-//
+//    this.findAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc();
+//    this.getAllOrderByBooks();
 
     }
 
@@ -46,4 +45,16 @@ public class ConsoleRunner implements CommandLineRunner {
     private void getAllAuthorsWithBooksReleaseDateBefore() {
         this.authorService.findDistinctByBooksBefore(BOOK_YEAR_BEFORE).forEach(author -> System.out.println(author.getFirstName() + " " + author.getLastName()));
     }
+
+    private void findAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc() {
+        this.bookService
+                .findAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc("George", "Powell")
+                .forEach(book -> System.out.println(book.getTitle() + " " + book.getReleaseDate() + " " + book.getCopies()));
+    }
+
+//    private void getAllOrderByBooks() {
+//        this.authorService.findAuthorGroupByBooksOrderByBooks().forEach(author -> System.out.println(author.getFirstName() + " "
+//        + author.getLastName() + " " + author.getBooks().size()));
+//    }
+
 }
