@@ -3,10 +3,10 @@ package softuni.exam.models.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import softuni.exam.models.entity.DayOfWeek;
 import softuni.exam.util.LocalTimeAdapter;
 
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -21,6 +21,7 @@ public class ImportForecastDTO {
 
 
     @XmlElement(name = "day_of_week")
+    @NotNull
     private DayOfWeek dayOfWeek;
 
     @XmlElement(name = "max_temperature")
@@ -31,13 +32,13 @@ public class ImportForecastDTO {
 
     @XmlElement()
     @XmlJavaTypeAdapter(LocalTimeAdapter.class)
-    @NonNull
+    @NotNull
     private LocalTime sunrise;
 
 
     @XmlElement()
     @XmlJavaTypeAdapter(LocalTimeAdapter.class)
-    @NonNull
+    @NotNull
     private LocalTime sunset;
 
     @XmlElement(name = "city")

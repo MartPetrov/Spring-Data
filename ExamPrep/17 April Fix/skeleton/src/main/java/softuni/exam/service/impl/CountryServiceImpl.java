@@ -43,7 +43,7 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public String readCountriesFromFile() throws IOException {
-        return Files.readString(Path.of(JSON_COUNTRIES_PATH));
+        return Files.readString(JSON_COUNTRIES_PATH);
     }
 
     @Override

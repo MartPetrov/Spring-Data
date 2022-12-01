@@ -46,7 +46,7 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public String readCitiesFileContent() throws IOException {
-        return Files.readString(Path.of(JSON_CITIES_PATH));
+        return Files.readString(JSON_CITIES_PATH);
     }
 
     @Override
